@@ -58,11 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Free Pixel Army\Scripts\BoredButton.cs" />
-     <Compile Include="Assets\Free Pixel Army\Scripts\IdleButton.cs" />
-     <Compile Include="Assets\Free Pixel Army\Scripts\WalkButton.cs" />
-     <Compile Include="Assets\Free Pixel Army\Scripts\YawnButton.cs" />
-     <None Include="Assets\Free Pixel Army\Documentation\Documentation.txt" />
+     <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\BoredButton.cs" />
+     <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\IdleButton.cs" />
+     <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\WalkButton.cs" />
+     <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\YawnButton.cs" />
+     <None Include="Assets\All Assets\Free Pixel Army\Documentation\Documentation.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/antoi/Desktop/School/Prog-Jeux/TP-SYN/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
