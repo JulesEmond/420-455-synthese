@@ -8,6 +8,11 @@ public class CameraScript : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Vector2 posOffset;
     [SerializeField] private float timeOffset;
+
+    [SerializeField] private float leftLimit;
+    [SerializeField] private float rightLimit;
+    [SerializeField] private float topLimit;
+    [SerializeField] private float bottomLimit;
     
     
     // Start is called before the first frame update
@@ -30,9 +35,16 @@ public class CameraScript : MonoBehaviour
         Vector3 finalPos = player.transform.position;
 
         finalPos.x += posOffset.x;
-        finalPos.y = initPos.y;
+        finalPos.y += posOffset.y;
         finalPos.z = -10;
 
         transform.position = Vector3.Lerp(initPos, finalPos,timeOffset * Time.deltaTime);
+
+        transform.position = new Vector3
+        (
+            Mathf.Clamp(transform.position.x, leftLimit, rightLimit),
+            Mathf.Clamp(transform.position.y, bottomLimit, topLimit),
+            transform.position.z
+        );
     }
 }
