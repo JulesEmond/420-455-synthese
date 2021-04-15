@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LimitWall
   - void
+  - FinishLevelOne
   layers:
   - Default
   - TransparentFX
