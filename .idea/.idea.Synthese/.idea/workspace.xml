@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e9fd14c-d971-4990-8390-d4ae22d63899" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/All Assets/Free Pixel Army/Sprites/Humans/Ordinary/Animation/Ordinary.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/All Assets/Free Pixel Army/Sprites/Humans/Ordinary/Animation/Ordinary.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Synthese.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Synthese.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +24,8 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1r7LYUskGVaofODjkGWeqJVflGP" />
@@ -82,7 +75,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618322237622</updated>
-      <workItem from="1618322273865" duration="2924000" />
+      <workItem from="1618322273865" duration="3335000" />
+      <workItem from="1618513901184" duration="1447000" />
     </task>
     <servers />
   </component>
@@ -101,6 +95,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

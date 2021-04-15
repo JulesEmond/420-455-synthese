@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D.Animation;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -10,9 +9,9 @@ public class PlayerScript : MonoBehaviour
     public Animator anim;
     private float speed = 2.5f;
     private float jumpHeight = 5f;
+    private float diffX = 0f;
     private SpriteRenderer _renderer;
     private Rigidbody2D _rb;
-    [SerializeField] private Camera cam;
     
     private bool _touchingGround = true;
 
@@ -34,7 +33,7 @@ public class PlayerScript : MonoBehaviour
     void Movements()
     {
         Vector3 pos = new Vector3();
-        
+        float initX = transform.position.x;
         if (Input.GetKey ("w") && _touchingGround) {
             _rb.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             _touchingGround = false;
@@ -49,7 +48,8 @@ public class PlayerScript : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(0,0,0);
         transform.position = pos + transform.position;
-        cam.transform.position = new Vector3(pos.x + cam.transform.position.x, cam.transform.position.y, cam.transform.position.z);
+        float finalX = transform.position.x;
+        diffX = finalX - initX;
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -69,5 +69,10 @@ public class PlayerScript : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
+    }
+
+    public float GetDiffX()
+    {
+        return diffX;
     }
 }
