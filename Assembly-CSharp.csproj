@@ -62,8 +62,10 @@
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\IdleButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\WalkButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\YawnButton.cs" />
+     <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\RevolverScript.cs" />
      <None Include="Assets\All Assets\Free Pixel Army\Documentation\Documentation.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/antoi/Desktop/School/Prog-Jeux/TP-SYN/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
