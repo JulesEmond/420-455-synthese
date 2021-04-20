@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -9,6 +11,14 @@ public class RevolverScript : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
 
     private SpriteRenderer _gunRenderer;
+
+    private int timeBetweenShots = 30;
+
+    private int numberOfBulletsLeft = 6;
+    
+    private int reloadTime = 0;
+    
+    
     
     // Start is called before the first frame update
     void Start()
@@ -19,21 +29,43 @@ public class RevolverScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if(Input.GetKey("space"))
+        if(Input.GetKey("space") && timeBetweenShots >= 30 && numberOfBulletsLeft > 0)
         {
-            GameObject bullet;
-            bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-            Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-            
-            if (_gunRenderer.flipX)
-            {
-                bulletBody.velocity = transform.TransformDirection(Vector2.left * 100);
-            }
-            else
-            {
-                bulletBody.velocity = transform.TransformDirection(Vector2.right * 100);
-            }
-            Destroy(bullet, 2f);
+            timeBetweenShots = 0;
+            numberOfBulletsLeft--;
+            Shoot();
         }
+        if (reloadTime == 100 && numberOfBulletsLeft == 0)
+        {
+            print("reloaded");
+            numberOfBulletsLeft = 6;
+            reloadTime = 0;
+        }
+        else if (numberOfBulletsLeft == 0)
+        {
+            print("reloading.." + reloadTime);
+            reloadTime++;
+        }
+        timeBetweenShots++;
+    }
+    private void Shoot()
+    {
+        GameObject bullet;
+
+        if (_gunRenderer.flipX)
+        {
+            var initBulletPos = new Vector3(transform.position.x - 0.25f, transform.position.y, transform.position.z);
+            bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
+            Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
+            bulletBody.velocity = transform.TransformDirection(Vector2.left * 100);
+        }
+        else
+        {
+            var initBulletPos = new Vector3(transform.position.x + 0.25f, transform.position.y, transform.position.z);
+            bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
+            Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
+            bulletBody.velocity = transform.TransformDirection(Vector2.right * 100);
+        }
+        Destroy(bullet, 2f);
     }
 }
