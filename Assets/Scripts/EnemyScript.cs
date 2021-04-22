@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -13,6 +16,8 @@ public class EnemyScript : MonoBehaviour
     private bool _isStandBy = false;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
+    [SerializeField] private EnemyRifleScript _enemyRifleScript;
+    
     private GameObject weapon;
 
     private SpriteRenderer _weaponRenderer;

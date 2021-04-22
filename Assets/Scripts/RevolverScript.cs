@@ -37,13 +37,11 @@ public class RevolverScript : MonoBehaviour
         }
         if (reloadTime == 100 && numberOfBulletsLeft == 0)
         {
-            print("reloaded");
             numberOfBulletsLeft = 6;
             reloadTime = 0;
         }
         else if (numberOfBulletsLeft == 0)
         {
-            print("reloading.." + reloadTime);
             reloadTime++;
         }
         timeBetweenShots++;
