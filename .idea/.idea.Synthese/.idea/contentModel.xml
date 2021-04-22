@@ -20,8 +20,11 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="BulletScript.cs" t="Include" />
           <e p="CameraScript.cs" t="Include" />
+          <e p="EnemyScript.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />
+          <e p="RevolverScript.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -64,6 +64,7 @@
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\YawnButton.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RevolverScript.cs" />
      <None Include="Assets\All Assets\Free Pixel Army\Documentation\Documentation.txt" />
