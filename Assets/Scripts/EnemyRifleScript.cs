@@ -26,16 +26,16 @@ public class EnemyRifleScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (timeBetweenShots >= 30 && numberOfBulletsLeft > 0 && isShooting)
+        if (timeBetweenShots >= 1000 && numberOfBulletsLeft > 0 && isShooting)
         {
             timeBetweenShots = 0;
             numberOfBulletsLeft--;
             Shoot();
         }
 
-        if (reloadTime == 2000 && numberOfBulletsLeft == 0)
+        if (reloadTime >= 3000 && numberOfBulletsLeft == 0)
         {
-            numberOfBulletsLeft = 6;
+            numberOfBulletsLeft = 5;
             reloadTime = 0;
         }
         else if (numberOfBulletsLeft == 0)

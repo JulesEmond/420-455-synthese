@@ -3,10 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5e9fd14c-d971-4990-8390-d4ae22d63899" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/All Assets/Free Pixel Army/Sprites/Humans/Helmet/Animation/Helmet.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/All Assets/Free Pixel Army/Sprites/Humans/Helmet/Animation/Helmet.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyRifleScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyRifleScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayCastScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RayCastScript.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +29,9 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/CameraScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyRifleScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RayCastScript.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1r7LYUskGVaofODjkGWeqJVflGP" />
@@ -80,6 +84,7 @@
       <workItem from="1618322273865" duration="3335000" />
       <workItem from="1618513901184" duration="3843000" />
       <workItem from="1619122538203" duration="1450000" />
+      <workItem from="1619531012922" duration="2405000" />
     </task>
     <servers />
   </component>
