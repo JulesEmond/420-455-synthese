@@ -24,6 +24,7 @@ public class EnemyScript : MonoBehaviour
     private GameObject weapon;
 
     private SpriteRenderer _weaponRenderer;
+    private Vector2 _previousVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class EnemyScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         weapon = transform.GetChild(0).gameObject;
         _weaponRenderer = weapon.GetComponent<SpriteRenderer>();
+        _previousVelocity = new Vector2(0, 0);
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class EnemyScript : MonoBehaviour
     {
         Movements();
         Animate();
+        _previousVelocity = _rb.velocity;
     }
 
     public void setAggro(Boolean bol)
@@ -106,7 +109,7 @@ public class EnemyScript : MonoBehaviour
         }
         
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        _rb.velocity = new Vector2(0, 0);
+        _rb.velocity = _previousVelocity;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

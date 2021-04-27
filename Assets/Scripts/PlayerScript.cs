@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
+    private Vector2 _previousVelocity;
+
     private GameObject weapon;
 
     private SpriteRenderer _weaponRenderer;
@@ -27,6 +29,7 @@ public class PlayerScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         weapon = transform.GetChild(0).gameObject;
         _weaponRenderer = weapon.GetComponent<SpriteRenderer>();
+        _previousVelocity = new Vector2(0, 0);
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class PlayerScript : MonoBehaviour
     {
         Movements();
         Animate();
+        _previousVelocity = _rb.velocity;
     }
 
     void Movements()
@@ -73,7 +77,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("bullet"))
         {
-            _rb.velocity = new Vector2(0, 0);
+            _rb.velocity = _previousVelocity;
         }
     }
     
