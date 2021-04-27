@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using DefaultNamespace;
 using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -23,7 +22,6 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private EnemyRifleScript _enemyRifleScript;
 
     private GameObject weapon;
-    private GameObject raycast;
 
     private SpriteRenderer _weaponRenderer;
 
@@ -35,7 +33,6 @@ public class EnemyScript : MonoBehaviour
         _enemyRenderer = GetComponent<SpriteRenderer>();
         _rb = GetComponent<Rigidbody2D>();
         weapon = transform.GetChild(0).gameObject;
-        raycast = transform.GetChild(1).gameObject;
         _weaponRenderer = weapon.GetComponent<SpriteRenderer>();
     }
 
@@ -109,6 +106,7 @@ public class EnemyScript : MonoBehaviour
         }
         
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        _rb.velocity = new Vector2(0, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D other)

@@ -9,13 +9,13 @@ public class EnemyRifleScript : MonoBehaviour
 
     private SpriteRenderer _gunRenderer;
 
-    private int timeBetweenShots = 1000;
+    private int timeBetweenShots = 500;
 
     private int numberOfBulletsLeft = 5;
 
     private int reloadTime = 0;
 
-    private bool isShooting = true;
+    private bool isShooting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -26,14 +26,14 @@ public class EnemyRifleScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (timeBetweenShots >= 1000 && numberOfBulletsLeft > 0 && isShooting)
+        if (timeBetweenShots >= 500 && numberOfBulletsLeft > 0 && isShooting)
         {
             timeBetweenShots = 0;
             numberOfBulletsLeft--;
             Shoot();
         }
 
-        if (reloadTime >= 3000 && numberOfBulletsLeft == 0)
+        if (reloadTime >= 2000 && numberOfBulletsLeft == 0)
         {
             numberOfBulletsLeft = 5;
             reloadTime = 0;

@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("bullet"))
         {
-            print("Hit!");
+            _rb.velocity = new Vector2(0, 0);
         }
     }
     

@@ -31,7 +31,6 @@ public class RayCastScript : MonoBehaviour
         { 
             if (hit.transform.tag == "Player")
             {
-                print("Spotted");
                 _enemyScript.setAggro(true);
             }
             else _enemyScript.setAggro(false);
