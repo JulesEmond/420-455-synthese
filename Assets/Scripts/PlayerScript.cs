@@ -71,6 +71,10 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position = _initialPosition;
         }
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            print("Hit!");
+        }
     }
     
     void Animate()

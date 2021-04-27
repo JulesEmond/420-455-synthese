@@ -53,7 +53,6 @@ public class EnemyRifleScript : MonoBehaviour
 
     private void Shoot()
     {
-        print("Enter function shoot");
         GameObject bullet;
 
         if (_gunRenderer.flipX)
@@ -62,8 +61,7 @@ public class EnemyRifleScript : MonoBehaviour
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
             bulletBody.velocity = transform.TransformDirection(Vector2.left * 100);
-            print("shooting");
-            
+
         }
         else
         {
@@ -71,7 +69,6 @@ public class EnemyRifleScript : MonoBehaviour
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
             bulletBody.velocity = transform.TransformDirection(Vector2.right * 100);
-            print("shooting");
         }
         Destroy(bullet, 2f);
     }

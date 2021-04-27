@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\EnemyRifleScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\RayCastScript.cs" />
      <Compile Include="Assets\Scripts\RevolverScript.cs" />
      <None Include="Assets\All Assets\Free Pixel Army\Documentation\Documentation.txt" />
  <Reference Include="Unity.Timeline.Editor">

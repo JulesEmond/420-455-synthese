@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,6 +16,9 @@ public class EnemyScript : MonoBehaviour
     private bool _walkingRight = true;
     private bool _isStandBy = false;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    
+    private Boolean _aggro = false;
+    
 
     [SerializeField] private EnemyRifleScript _enemyRifleScript;
     
@@ -38,45 +42,56 @@ public class EnemyScript : MonoBehaviour
         Movements();
         Animate();
     }
-    
+
+    public void setAggro(Boolean bol)
+    {
+        _aggro = bol;
+    }
+
     void Movements()
         {
-            if (!_isStandBy)
+            if (!_aggro)
             {
-                Vector3 pos = new Vector3();
-                if (_walkingRight)
+                if (!_isStandBy)
                 {
-                    pos.x += Speed * Time.deltaTime;
-                    _enemyRenderer.flipX = false;
-                    _weaponRenderer.flipX = false;
-                    weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
-                }
+                    Vector3 pos = new Vector3();
+                    _enemyRifleScript.setIsShooting(false);
+                    if (_walkingRight)
+                    {
+                        pos.x += Speed * Time.deltaTime;
+                        _enemyRenderer.flipX = false;
+                        _weaponRenderer.flipX = false;
+                        weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                    }
 
-                if (!_walkingRight)
-                {
-                    pos.x -= Speed * Time.deltaTime;
-                    _enemyRenderer.flipX = true;
-                    _weaponRenderer.flipX = true;
-                    weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
-                }
+                    if (!_walkingRight)
+                    {
+                        pos.x -= Speed * Time.deltaTime;
+                        _enemyRenderer.flipX = true;
+                        _weaponRenderer.flipX = true;
+                        weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                    }
 
-                Transform transform1;
-                (transform1 = transform).rotation = Quaternion.Euler(0, 0, 0);
-                transform1.position = pos + transform1.position;
+                    Transform transform1;
+                    (transform1 = transform).rotation = Quaternion.Euler(0, 0, 0);
+                    transform1.position = pos + transform1.position;
 
-                if (transform1.position.x < _initialPosition.x - 3)
-                {
-                    _walkingRight = true;
-                    _isStandBy = true;
-                    Invoke("StartWalking", 2);
-                }
+                    if (transform1.position.x < _initialPosition.x - 3)
+                    {
+                        _walkingRight = true;
+                        _isStandBy = true;
+                        Invoke("StartWalking", 2);
+                    }
 
-                if (transform1.position.x > _initialPosition.x + 3)
-                {
-                    _walkingRight = false;
-                    _isStandBy = true;
-                    Invoke("StartWalking", 2);
+                    if (transform1.position.x > _initialPosition.x + 3)
+                    {
+                        _walkingRight = false;
+                        _isStandBy = true;
+                        Invoke("StartWalking", 2);
+                    }
                 }
+                _isStandBy = true;
+                _enemyRifleScript.setIsShooting(true);
             }
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
