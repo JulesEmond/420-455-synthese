@@ -25,6 +25,7 @@ public class EnemyScript : MonoBehaviour
 
     private SpriteRenderer _weaponRenderer;
     private Vector2 _previousVelocity;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -117,6 +118,17 @@ public class EnemyScript : MonoBehaviour
         if (other.gameObject.CompareTag("void"))
         {
             Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            anim.SetBool(IsWalking, false);
+            Destroy(_rb);
+            Destroy(GetComponent<BoxCollider2D>());
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+            Destroy(GetComponent<EnemyScript>());
+            Destroy(GetComponent<Animation>());
+            Destroy(weapon);
         }
     }
 

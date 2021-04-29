@@ -1,5 +1,4 @@
 ﻿using System.Threading;
-using TMPro;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
