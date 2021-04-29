@@ -65,7 +65,7 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name != "")
+        if (other.gameObject.CompareTag("ground"))
         {
             _touchingGround = true;
         }

@@ -20,7 +20,6 @@ using UnityEngine;
 
             if (other.gameObject.name != "")
             {
-                print("Hit!");
                 Destroy(gameObject);
             }
         }
