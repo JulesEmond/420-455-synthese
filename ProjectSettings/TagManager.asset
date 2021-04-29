@@ -8,6 +8,7 @@ TagManager:
   - void
   - FinishLevelOne
   - bullet
+  - ground
   layers:
   - Default
   - TransparentFX
