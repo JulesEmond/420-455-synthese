@@ -15,7 +15,7 @@ public class EnemyRifleScript : MonoBehaviour
 
     private int reloadTime = 0;
 
-    private bool isShooting = false;
+    public bool isShooting = false;
 
     // Start is called before the first frame update
     void Start()
