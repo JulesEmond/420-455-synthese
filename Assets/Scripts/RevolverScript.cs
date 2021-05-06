@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using Random = System.Random;
 
 public class RevolverScript : MonoBehaviour
 {
@@ -55,15 +56,15 @@ public class RevolverScript : MonoBehaviour
             var initBulletPos = new Vector3(transform.position.x - 0.25f, transform.position.y, transform.position.z);
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-            bulletBody.velocity = transform.TransformDirection(Vector2.left * 100);
+            bulletBody.velocity = transform.TransformDirection(Vector2.left * 50);
         }
         else
         {
             var initBulletPos = new Vector3(transform.position.x + 0.25f, transform.position.y, transform.position.z);
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-            bulletBody.velocity = transform.TransformDirection(Vector2.right * 100);
+            bulletBody.velocity = transform.TransformDirection(Vector2.right * 50);
         }
-        Destroy(bullet, 2f);
+        Destroy(bullet, 0.20f);
     }
 }

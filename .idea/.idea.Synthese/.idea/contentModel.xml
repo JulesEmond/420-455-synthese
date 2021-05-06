@@ -24,6 +24,9 @@
           <e p="CameraScript.cs" t="Include" />
           <e p="EnemyRifleScript.cs" t="Include" />
           <e p="EnemyScript.cs" t="Include" />
+          <e p="EnemySmgScript.cs" t="Include" />
+          <e p="EnemyWeaponScript.cs" t="Include" />
+          <e p="MiniGunRifleScript.cs" t="Include" />
           <e p="PlayerScript.cs" t="Include" />
           <e p="RayCastScript.cs" t="Include" />
           <e p="RevolverScript.cs" t="Include" />
