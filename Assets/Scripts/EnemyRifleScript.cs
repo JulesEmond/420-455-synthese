@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngineInternal;
 
-public class EnemyRifleScript : MonoBehaviour
+public class EnemyRifleScript : EnemyWeaponScript
 {
     [SerializeField] private GameObject bulletPrefab;
 
@@ -46,7 +46,7 @@ public class EnemyRifleScript : MonoBehaviour
         timeBetweenShots++;
     }
 
-    public void setIsShooting(bool isShooting)
+    public override void setIsShooting(bool isShooting)
     {
         this.isShooting = isShooting;
     }

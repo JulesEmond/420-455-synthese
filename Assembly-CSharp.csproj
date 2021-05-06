@@ -66,8 +66,9 @@
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\EnemyRifleScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
+     <Compile Include="Assets\Scripts\EnemySmgScript.cs" />
+     <Compile Include="Assets\Scripts\EnemyWeaponScript.cs" />
      <Compile Include="Assets\Scripts\MiniGunRifleScript.cs" />
-     <Compile Include="Assets\Scripts\Mp5RifleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
      <Compile Include="Assets\Scripts\RevolverScript.cs" />

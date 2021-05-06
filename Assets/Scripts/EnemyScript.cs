@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour
     private Boolean _aggro = false;
 
 
-    [SerializeField] private EnemyRifleScript _enemyRifleScript;
+    [SerializeField] private EnemyWeaponScript _enemyWeaponScript;
 
     private GameObject weapon;
 
@@ -101,12 +101,12 @@ public class EnemyScript : MonoBehaviour
         {
             _isStandBy = true;
             Invoke("StartWalking", 2);
-            _enemyRifleScript.setIsShooting(true);
+            _enemyWeaponScript.setIsShooting(true);
         }
 
         if (!_aggro)
         {
-            _enemyRifleScript.setIsShooting(false);
+            _enemyWeaponScript.setIsShooting(false);
         }
         
         transform.rotation = Quaternion.Euler(0, 0, 0);
