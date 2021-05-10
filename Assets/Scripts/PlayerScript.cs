@@ -73,10 +73,12 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.CompareTag("void"))
         {
             transform.position = _initialPosition;
+            GameManager.nbLives--;
         }
         if (other.gameObject.CompareTag("bullet"))
         {
             _rb.velocity = _previousVelocity;
+            GameManager.nbLives--;
         }
     }
     
