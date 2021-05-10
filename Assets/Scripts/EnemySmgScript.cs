@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class EnemySmgScript : EnemyWeaponScript
 {
@@ -9,7 +10,7 @@ public class EnemySmgScript : EnemyWeaponScript
 
     private SpriteRenderer _gunRenderer;
 
-    private int timeBetweenShots = 30;
+    private int timeBetweenShots = 20;
 
     private int numberOfBulletsLeft = 32;
 
@@ -26,7 +27,7 @@ public class EnemySmgScript : EnemyWeaponScript
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timeBetweenShots >= 30 && numberOfBulletsLeft > 0 && isShooting)
+        if (timeBetweenShots >= 20 && numberOfBulletsLeft > 0 && isShooting)
         {
             timeBetweenShots = 0;
             numberOfBulletsLeft--;
@@ -54,13 +55,18 @@ public class EnemySmgScript : EnemyWeaponScript
     private void Shoot()
     {
         GameObject bullet;
+        Random random = new Random();
+        var hipfireValue = (float)random.NextDouble() * (15 - (-15)) + (-15);
 
         if (_gunRenderer.flipX)
         {
             var initBulletPos = new Vector3(transform.position.x - 1f, transform.position.y, transform.position.z);
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-            bulletBody.velocity = transform.TransformDirection(Vector2.left * 100);
+            bullet.transform.Rotate(0, 0, hipfireValue);
+            Vector2 force = new Vector2(-100, hipfireValue) * 20;
+            bulletBody.AddForce(force);
+            
 
         }
         else
@@ -68,8 +74,10 @@ public class EnemySmgScript : EnemyWeaponScript
             var initBulletPos = new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z);
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-            bulletBody.velocity = transform.TransformDirection(Vector2.right * 100);
+            Vector2 force = new Vector2(100, hipfireValue) * 20;
+            bulletBody.AddForce(force);
+
         }
-        Destroy(bullet, 0.1f);
+        Destroy(bullet, 0.15f);
     }
 }

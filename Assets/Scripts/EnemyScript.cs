@@ -67,7 +67,14 @@ public class EnemyScript : MonoBehaviour
                 pos.x += Speed * Time.deltaTime;
                 _enemyRenderer.flipX = false;
                 _weaponRenderer.flipX = false;
-                weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                if (weapon.gameObject.name == "EnemyRifle")
+                { 
+                    weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                }
+                else
+                {
+                    weapon.transform.position = new Vector3(transform.position.x + 0.17f, transform.position.y + 0.61f, 0);
+                }
             }
 
             if (!_walkingRight)
@@ -75,7 +82,15 @@ public class EnemyScript : MonoBehaviour
                 pos.x -= Speed * Time.deltaTime;
                 _enemyRenderer.flipX = true;
                 _weaponRenderer.flipX = true;
-                weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                if (weapon.gameObject.name == "EnemyRifle")
+                { 
+                    weapon.transform.position = new Vector3(transform.position.x, transform.position.y + 0.61f, 0);
+                }
+                else
+                {
+                    weapon.transform.position = new Vector3(transform.position.x - 0.17f, transform.position.y + 0.61f, 0);
+                }
+                
             }
 
             Transform transform1;

@@ -1,4 +1,5 @@
 ﻿using System.Threading;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -11,8 +12,7 @@ public class PlayerScript : MonoBehaviour
     private Vector3 _initialPosition;
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
-
-    private Vector2 _previousVelocity;
+    
 
     private GameObject weapon;
 
@@ -28,15 +28,18 @@ public class PlayerScript : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         weapon = transform.GetChild(0).gameObject;
         _weaponRenderer = weapon.GetComponent<SpriteRenderer>();
-        _previousVelocity = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_rb == null)
+        {
+            gameObject.AddComponent<Rigidbody2D>();
+            _rb = GetComponent<Rigidbody2D>();
+        }
         Movements();
         Animate();
-        _previousVelocity = _rb.velocity;
     }
 
     void Movements()
@@ -77,8 +80,13 @@ public class PlayerScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("bullet"))
         {
+<<<<<<< HEAD
             _rb.velocity = _previousVelocity;
             GameManager.nbLives--;
+=======
+            Destroy(_rb);
+            _rb = null;
+>>>>>>> 138a22a6e0d91e184a60ce3199cc1f15526292c6
         }
     }
     
