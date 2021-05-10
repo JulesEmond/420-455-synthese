@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviour
     private Vector3 _initialPosition;
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
-    
 
     private GameObject weapon;
 
@@ -80,13 +79,9 @@ public class PlayerScript : MonoBehaviour
         }
         if (other.gameObject.CompareTag("bullet"))
         {
-<<<<<<< HEAD
-            _rb.velocity = _previousVelocity;
             GameManager.nbLives--;
-=======
             Destroy(_rb);
             _rb = null;
->>>>>>> 138a22a6e0d91e184a60ce3199cc1f15526292c6
         }
     }
     

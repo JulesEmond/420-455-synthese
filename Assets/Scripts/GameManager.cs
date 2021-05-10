@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
     {
         if (nbLives == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(1);
             nbLives = -1;
         }
     }
