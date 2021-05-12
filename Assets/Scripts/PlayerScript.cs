@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     private Vector3 _initialPosition;
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+    
+    
 
     private GameObject weapon;
 
@@ -52,13 +55,13 @@ public class PlayerScript : MonoBehaviour
             pos.x += Speed * Time.deltaTime;
             _playerRenderer.flipX = false;
             _weaponRenderer.flipX = false;
-            weapon.transform.position = new Vector3(transform.position.x + 0.87f, transform.position.y + 0.61f, 0);
+            //weapon.transform.position = new Vector3(transform.position.x + 0.87f, transform.position.y + 0.61f, 0);
         }
         if (Input.GetKey ("a")) {
             pos.x -= Speed * Time.deltaTime;
             _playerRenderer.flipX = true;
             _weaponRenderer.flipX = true;
-            weapon.transform.position = new Vector3(transform.position.x - 0.87f, transform.position.y + 0.61f, 0);
+            //weapon.transform.position = new Vector3(transform.position.x - 0.87f, transform.position.y + 0.61f, 0);
         }
 
         Transform transform1;

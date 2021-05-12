@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class RevolverScript : MonoBehaviour
@@ -19,6 +20,10 @@ public class RevolverScript : MonoBehaviour
     
     private int reloadTime = 0;
     
+    [SerializeField] private Text bulletLefts;
+
+    [SerializeField] private GameObject player;
+    
     
     
     // Start is called before the first frame update
@@ -30,6 +35,7 @@ public class RevolverScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        bulletLefts.text = numberOfBulletsLeft + "/6" ;
         if(Input.GetKey("space") && timeBetweenShots >= 30 && numberOfBulletsLeft > 0)
         {
             timeBetweenShots = 0;
@@ -66,5 +72,16 @@ public class RevolverScript : MonoBehaviour
             bulletBody.velocity = transform.TransformDirection(Vector2.right * 50);
         }
         Destroy(bullet, 0.20f);
+    }
+
+    private void Update()
+    {
+        if (_gunRenderer.flipX)
+        {
+            transform.position = new Vector3(player.transform.position.x - 0.87f, player.transform.position.y + 0.61f, 0);
+        }
+        else 
+            transform.position = new Vector3(player.transform.position.x + 0.87f, player.transform.position.y + 0.61f, 0);
+            
     }
 }

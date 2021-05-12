@@ -24,9 +24,10 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float diffX = playerScript.GetDiffX();
-        //transform.position = new Vector3( diffX + transform.position.x, transform.position.y, transform.position.z);
-        FollowPlayer();
+        if (player != null)
+        {
+            FollowPlayer();
+        }
     }
 
     void FollowPlayer()
