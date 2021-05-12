@@ -18,9 +18,12 @@ public class EnemyRifleScript : EnemyWeaponScript
 
     public bool isShooting = false;
 
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _gunRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -71,6 +74,7 @@ public class EnemyRifleScript : EnemyWeaponScript
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
             bulletBody.velocity = transform.TransformDirection(Vector2.right * 50);
         }
+        _audioSource.Play();
         Destroy(bullet, 2f);
     }
 }

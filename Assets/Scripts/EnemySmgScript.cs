@@ -17,10 +17,14 @@ public class EnemySmgScript : EnemyWeaponScript
     private int reloadTime = 0;
 
     public bool isShooting = false;
+    
+    private AudioSource _audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         _gunRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -78,6 +82,7 @@ public class EnemySmgScript : EnemyWeaponScript
             bulletBody.AddForce(force);
 
         }
+        _audioSource.Play();
         Destroy(bullet, 0.15f);
     }
 }

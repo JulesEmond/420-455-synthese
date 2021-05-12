@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     private Vector3 _initialPosition;
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
+
+    private AudioSource _audioSource;
     
     
 
@@ -24,6 +26,8 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        _audioSource = GetComponent<AudioSource>();
         _initialPosition = transform.position;
         anim = GetComponent<Animator>();
         _playerRenderer = GetComponent<SpriteRenderer>();
@@ -77,11 +81,13 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("void"))
         {
+            _audioSource.Play();
             transform.position = _initialPosition;
             GameManager.nbLives--;
         }
         if (other.gameObject.CompareTag("bullet"))
         {
+            _audioSource.Play();
             GameManager.nbLives--;
             Destroy(_rb);
             _rb = null;

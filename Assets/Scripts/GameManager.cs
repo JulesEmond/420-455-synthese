@@ -11,10 +11,19 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject player;
     public static int nbLives;
-    
+
+    private AudioSource[] audios;
+    private AudioSource backgroundMusic;
+    private AudioSource enemyDeath;
+    private AudioSource gameDone;
+
     // Start is called before the first frame update
     void Start()
     {
+        audios = GetComponents<AudioSource>();
+        backgroundMusic = audios[0];
+        gameDone = audios[1];
+        enemyDeath = audios[2];
         nbLives = 3;
     }
 
@@ -28,12 +37,13 @@ public class GameManager : MonoBehaviour
         
         if (nbLives == 0)
         {
+            backgroundMusic.Stop();
             nbLives = -1;
+            enemyDeath.Play();
+            gameDone.Play();
             Destroy(player);
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Invoke("LoadGameOver", 2f);
-            
-            
+            Invoke("LoadGameOver", 4f);
         }
     }
 

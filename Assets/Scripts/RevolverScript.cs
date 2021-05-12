@@ -24,12 +24,23 @@ public class RevolverScript : MonoBehaviour
 
     [SerializeField] private GameObject player;
     
+    private AudioSource[] audios;
+    private AudioSource gunShotClip;
+    private AudioSource reloadClip;
+    private AudioSource cockBullet;
     
     
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         _gunRenderer = GetComponent<SpriteRenderer>();
+        audios = GetComponents<AudioSource>();
+        gunShotClip = audios[0];
+        reloadClip = audios[1];
+        cockBullet = audios[2];
     }
 
     // Update is called once per frame
@@ -42,8 +53,10 @@ public class RevolverScript : MonoBehaviour
             numberOfBulletsLeft--;
             Shoot();
         }
+        
         if (reloadTime == 100 && numberOfBulletsLeft == 0)
         {
+            reloadClip.Play();
             numberOfBulletsLeft = 6;
             reloadTime = 0;
         }
@@ -71,6 +84,8 @@ public class RevolverScript : MonoBehaviour
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
             bulletBody.velocity = transform.TransformDirection(Vector2.right * 50);
         }
+        gunShotClip.Play();
+        cockBullet.Play();
         Destroy(bullet, 0.20f);
     }
 
