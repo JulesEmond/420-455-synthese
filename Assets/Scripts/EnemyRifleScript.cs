@@ -75,6 +75,6 @@ public class EnemyRifleScript : EnemyWeaponScript
             bulletBody.velocity = transform.TransformDirection(Vector2.right * 50);
         }
         _audioSource.Play();
-        Destroy(bullet, 2f);
+        Destroy(bullet, 0.50f);
     }
 }

@@ -78,6 +78,7 @@ public class EnemySmgScript : EnemyWeaponScript
             var initBulletPos = new Vector3(transform.position.x + 1f, transform.position.y, transform.position.z);
             bullet = Instantiate(bulletPrefab, initBulletPos, transform.rotation);
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
+            bullet.transform.Rotate(0, 0, hipfireValue);
             Vector2 force = new Vector2(100, hipfireValue) * 20;
             bulletBody.AddForce(force);
 

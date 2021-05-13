@@ -62,11 +62,11 @@
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\IdleButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\WalkButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\YawnButton.cs" />
-     <Compile Include="Assets\CrateScript.cs" />
      <Compile Include="Assets\Epic Adventure Orchestral Background Music\audio.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
+     <Compile Include="Assets\Scripts\CrateScript.cs" />
      <Compile Include="Assets\Scripts\EnemyRifleScript.cs" />
      <Compile Include="Assets\Scripts\EnemyScript.cs" />
      <Compile Include="Assets\Scripts\EnemySmgScript.cs" />
@@ -74,8 +74,8 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\MiniGunRifleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
+     <Compile Include="Assets\Scripts\PlayerWeaponScript.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />
-     <Compile Include="Assets\Scripts\RevolverScript.cs" />
      <None Include="Assets\All Assets\Free Pixel Army\Documentation\Documentation.txt" />
      <None Include="Assets\Epic Adventure Orchestral Background Music\README FIRST.txt" />
  <Reference Include="Unity.Timeline.Editor">
