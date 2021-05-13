@@ -108,6 +108,11 @@ public class PlayerWeaponScript : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R) && numberOfBulletsLeft < totalBullets)
+        {
+            numberOfBulletsLeft = 0;
+        }
+
         if (_gunRenderer.flipX)
         {
             transform.position = new Vector3(player.transform.position.x - offSetX, player.transform.position.y + 0.61f, 0);
