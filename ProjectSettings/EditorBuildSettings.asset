@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BeforeGameScene.unity
+    guid: e100c94482d2043439ad3d4a74033ec2
+  - enabled: 1
     path: Assets/Scenes/CaveLevel.unity
     guid: 85e7ce6f12bb8e34e84c45960c1a70e3
   - enabled: 1

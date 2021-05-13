@@ -62,6 +62,7 @@
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\IdleButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\WalkButton.cs" />
      <Compile Include="Assets\All Assets\Free Pixel Army\Scripts\YawnButton.cs" />
+     <Compile Include="Assets\CrateScript.cs" />
      <Compile Include="Assets\Epic Adventure Orchestral Background Music\audio.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
