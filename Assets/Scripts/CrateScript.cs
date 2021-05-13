@@ -89,7 +89,7 @@ public class CrateScript : MonoBehaviour
                     _playerWeaponScript.reloading = 0;
                     _playerWeaponScript.reloadTime = 300;
                     _playerWeaponScript.offSetX = 0f;
-                    _playerWeaponScript.offSetBullet = 1f;
+                    _playerWeaponScript.offSetBullet = 1.25f;
                     _playerWeaponScript.bulletDestroyTime = 0.30f;
                     _playerWeaponScript.offSetHipFire = 20f;
                     break;
@@ -105,7 +105,7 @@ public class CrateScript : MonoBehaviour
                     _playerWeaponScript.reloading = 0;
                     _playerWeaponScript.reloadTime = 200;
                     _playerWeaponScript.offSetX = 0f;
-                    _playerWeaponScript.offSetBullet = 1f;
+                    _playerWeaponScript.offSetBullet = 1.25f;
                     _playerWeaponScript.bulletDestroyTime = 0.50f;
                     _playerWeaponScript.offSetHipFire = 0f;
                     break;

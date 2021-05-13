@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
@@ -83,7 +84,7 @@ public class PlayerScript : MonoBehaviour
         {
             _audioSource.Play();
             transform.position = _initialPosition;
-            GameManager.nbLives--;
+            GameManager.nbLives = 0;
         }
         if (other.gameObject.CompareTag("bullet"))
         {
@@ -91,6 +92,11 @@ public class PlayerScript : MonoBehaviour
             GameManager.nbLives--;
             Destroy(_rb);
             _rb = null;
+        }
+
+        if (other.gameObject.name == "end")
+        {
+            SceneManager.LoadScene(3);
         }
     }
     

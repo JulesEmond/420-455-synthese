@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e9fd14c-d971-4990-8390-d4ae22d63899" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Synthese/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BeforeGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BeforeGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CaveLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CrateScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CrateScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +36,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyRifleScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/RevolverScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemySmgScript.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CrateScript.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript.cs" />
     </changedPaths>
   </component>
@@ -86,6 +94,7 @@
       <workItem from="1619535814245" duration="284000" />
       <workItem from="1619727575899" duration="1551000" />
       <workItem from="1620330304312" duration="4503000" />
+      <workItem from="1620937046907" duration="720000" />
     </task>
     <servers />
   </component>
