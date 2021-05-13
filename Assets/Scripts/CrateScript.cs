@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -26,6 +27,7 @@ public class CrateScript : MonoBehaviour
     
     private AudioSource gunShotClip;
     private AudioSource cockBullet;
+    private AudioSource reloadClip;
 
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class CrateScript : MonoBehaviour
         audios = weapon.GetComponents<AudioSource>();
 
         gunShotClip = audios[0];
+        reloadClip = audios[1];
         cockBullet = audios[2];
     }
 
@@ -109,7 +112,9 @@ public class CrateScript : MonoBehaviour
                     _playerWeaponScript.bulletDestroyTime = 0.50f;
                     _playerWeaponScript.offSetHipFire = 0f;
                     break;
-            } 
+            }
+
+            reloadClip.Play();
         }
         
     }

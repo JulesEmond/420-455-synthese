@@ -25,11 +25,15 @@ public class EnemyScript : MonoBehaviour
 
     private SpriteRenderer _weaponRenderer;
     private Vector2 _previousVelocity;
-    
+
+    private AudioSource _audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+        _audioSource = GetComponent<AudioSource>();
         _initialPosition = transform.position;
         anim = GetComponent<Animator>();
         _enemyRenderer = GetComponent<SpriteRenderer>();
@@ -137,6 +141,7 @@ public class EnemyScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("bullet"))
         {
+            _audioSource.Play();
             anim.SetBool(IsWalking, false);
             Destroy(_rb);
             Destroy(GetComponent<BoxCollider2D>());

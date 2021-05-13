@@ -2,7 +2,6 @@
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -15,10 +14,8 @@ public class PlayerScript : MonoBehaviour
     private bool _touchingGround = true;
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
-    private AudioSource _audioSource;
-    
-    
-
+    private AudioSource[] audios;
+    private AudioSource playerHit;
     private GameObject weapon;
 
     private SpriteRenderer _weaponRenderer;
@@ -27,8 +24,8 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        _audioSource = GetComponent<AudioSource>();
+        audios = GetComponents<AudioSource>();
+        playerHit = audios[0];
         _initialPosition = transform.position;
         anim = GetComponent<Animator>();
         _playerRenderer = GetComponent<SpriteRenderer>();
@@ -60,13 +57,11 @@ public class PlayerScript : MonoBehaviour
             pos.x += Speed * Time.deltaTime;
             _playerRenderer.flipX = false;
             _weaponRenderer.flipX = false;
-            //weapon.transform.position = new Vector3(transform.position.x + 0.87f, transform.position.y + 0.61f, 0);
         }
         if (Input.GetKey ("a")) {
             pos.x -= Speed * Time.deltaTime;
             _playerRenderer.flipX = true;
             _weaponRenderer.flipX = true;
-            //weapon.transform.position = new Vector3(transform.position.x - 0.87f, transform.position.y + 0.61f, 0);
         }
 
         Transform transform1;
@@ -82,13 +77,13 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("void"))
         {
-            _audioSource.Play();
+            playerHit.Play();
             transform.position = _initialPosition;
             GameManager.nbLives = 0;
         }
         if (other.gameObject.CompareTag("bullet"))
         {
-            _audioSource.Play();
+            playerHit.Play();
             GameManager.nbLives--;
             Destroy(_rb);
             _rb = null;

@@ -9,6 +9,7 @@ TagManager:
   - FinishLevelOne
   - bullet
   - ground
+  - box
   layers:
   - Default
   - TransparentFX

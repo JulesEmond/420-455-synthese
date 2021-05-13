@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -35,7 +36,8 @@ public class GameManager : MonoBehaviour
             livesLeft.text = "Lives : " + nbLives.ToString();
         }
         
-        if (nbLives == 0)
+
+            if (nbLives == 0)
         {
             backgroundMusic.Stop();
             nbLives = -1;
@@ -51,4 +53,5 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+    
 }
