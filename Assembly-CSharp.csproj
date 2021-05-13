@@ -72,7 +72,6 @@
      <Compile Include="Assets\Scripts\EnemySmgScript.cs" />
      <Compile Include="Assets\Scripts\EnemyWeaponScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\MiniGunRifleScript.cs" />
      <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\Scripts\PlayerWeaponScript.cs" />
      <Compile Include="Assets\Scripts\RayCastScript.cs" />

@@ -1,6 +1,4 @@
-﻿using System.Threading;
-using UnityEditor.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
